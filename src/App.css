@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(67,75,106);
+}
+
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.board{
+  width: 600px;
+  height: 600px;
+  background-color: rgb(52,50,75);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.row{
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+}
+
+.square{
+  flex: 33%;
+  height: 100%;
+  border: 2px solid rgb(150, 60, 180);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 150px;
+  font-family: Arial, Helvetica, serif;
+  color: rgb(183, 183, 183)
+}
+.row:first-child .square{
+  border-top: none
+}
+.row:last-child .square{
+  border-bottom: none
+}
+.square:first-child{
+  border-left: none;
+}
+.square:last-child{
+  border-right: none;
+}
+.square:active{
+  background-color:rgb(80, 78, 116);
+}
+
+.scoreBlock{
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  color:blanchedalmond
+}
+
+.board.active:before{
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: brown;
+  position: absolute;
+}
+.board.active.vertical-6:before{
+  transform: translateX(100px);
+}
+.board.active.vertical-7:before{
+  transform: translateX(300px);
+}
+.board.active.vertical-8:before{
+  transform: translateX(500px);
+}
+.board.active.horizontal-2:before{
+  transform: translateY(-200px) translateX(300px) rotate(90deg);
+}
+.board.active.horizontal-5:before{
+  transform: translateY(0px) translateX(300px) rotate(90deg);
+}
+.board.active.horizontal-8:before{
+  transform: translateY(200px) translateX(300px) rotate(90deg);
+}
+.board.active.diagonal-6:before{
+  transform: translateY(-122px) translateX(300px) rotate(45deg);
+  height: 141%;
+}
+.board.active.diagonal-8:before{
+  transform: translateY(-122px) translateX(300px) rotate(-45deg);
+  height: 141%;
+}
